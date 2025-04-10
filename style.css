@@ -11,12 +11,12 @@
 
 @font-face {
     font-family: 'Valentine';
-    src: url(../fonte/ValentineSoul.ttf) format('truetype');
+    src: url(ValentineSoul.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Vcr';
-    src: url(../fonte/VCR_OSD_MONO_1.001.ttf) format('truetype');
+    src: url(VCR_OSD_MONO_1.001.ttf) format('truetype');
 }
 
 main {

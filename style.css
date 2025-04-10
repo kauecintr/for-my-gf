@@ -389,6 +389,7 @@ button:hover {
 
     /* NAVBAR */
     #top-bar {
+        position: static;
         flex-direction: row;
         height: 150px;
     }

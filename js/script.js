@@ -240,3 +240,22 @@ function calcularTempoJuntos(dataInicio) {
     const carta = document.getElementById('cartinha');
     carta.style.display = 'block';
   }
+  ///////////////////////////////
+
+
+  const elementos = document.querySelectorAll('.scroll-reveal');
+
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+
+    elementos.forEach(el => {
+      const elTop = el.getBoundingClientRect().top + scrollY;
+      if (scrollY + windowHeight > elTop + 100) {
+        el.classList.add('show');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);

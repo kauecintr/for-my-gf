@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --main-color: rgb(213, 221, 50);
     --footer-color: rgb(0, 0, 0);
 }
@@ -24,7 +24,12 @@ main {
     background-color: black;
 }
 
-h1, h2{
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2 {
     margin-top: 10px;
     font-family: 'Vcr', sans-serif;
     color: black;
@@ -33,7 +38,7 @@ h1, h2{
     padding: 20px;
 }
 
-p{
+p {
     font-family: 'Vcr', sans-serif;
     color: black;
     font-size: 25px;
@@ -41,7 +46,7 @@ p{
     padding: 20px;
 }
 
-.container{
+.container {
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -49,7 +54,7 @@ p{
 
 
 /*NAVBAR*/
-#top-bar{
+#top-bar {
     position: fixed;
     background-color: var(--main-color);
     width: 100%;
@@ -59,20 +64,20 @@ p{
     border: black solid;
 }
 
-#top-bar img{
+#top-bar img {
     width: 65px;
     height: 55px;
     border-radius: 50%;
 }
 
-#top-bar a{
+#top-bar a {
     text-decoration: none;
     color: black;
     font-size: 20px;
     transition: font-size 0.3s ease-in-out;
 }
 
-#top-bar ul{
+#top-bar ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -80,7 +85,7 @@ p{
     gap: 150px;
 }
 
-#top-bar a:hover{
+#top-bar a:hover {
     font-size: 25px;
     padding: 5px;
     background-color: black;
@@ -91,17 +96,20 @@ p{
 
 
 /*HOME*/
-#main-home{
+#main-home {
     margin-top: 50px;
     background-color: var(--main-color);
     height: auto;
     border-radius: 20px;
 }
 
-
+#main-music {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
 /*SOBRE*/
-#main-about{
+#main-about {
     margin-top: 80px;
     background-color: var(--main-color);
     height: auto;
@@ -112,7 +120,7 @@ p{
 
 
 /*DIVERSOS*/
-#main-random{
+#main-random {
     margin-top: 50px;
     padding-bottom: 30px;
     background-color: var(--main-color);
@@ -120,7 +128,7 @@ p{
     border-radius: 20px;
 }
 
-#img-container figure{
+#img-container figure {
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -129,7 +137,7 @@ p{
     flex-wrap: wrap;
 }
 
-#main-random img{
+#main-random img {
     margin: 20px 20px;
     width: 25%;
     height: 330px;
@@ -137,14 +145,14 @@ p{
     transition: ease-in-out 0.5s;
 }
 
-#main-random img:hover{
+#main-random img:hover {
     width: 27%;
     border: black solid
 }
 
 
 /*QUIZ*/
-.app{
+.app {
     border-radius: 10px;
     margin-top: 50px;
     margin-left: auto;
@@ -154,12 +162,12 @@ p{
     border: 2px solid black;
 }
 
-.app h1{
+.app h1 {
     border-bottom: 1px solid black;
 }
 
 
-.app h2{
+.app h2 {
     display: flex;
     justify-content: center;
     font-size: 10px;
@@ -169,7 +177,7 @@ p{
     padding: 20px;
 }
 
-.btn{
+.btn {
     background-color: white;
     color: black;
     font-weight: 500;
@@ -182,21 +190,21 @@ p{
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: black;
     color: white;
 }
 
-.btn:hover:not(.disabled){
+.btn:hover:not(.disabled) {
     background-color: black;
     color: white;
 }
 
-.btn.disabled{
+.btn.disabled {
     cursor: no-drop;
 }
 
-#next-btn{
+#next-btn {
     display: block;
     background-color: black;
     color: white;
@@ -210,26 +218,27 @@ p{
     transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
-#next-btn:hover{
+#next-btn:hover {
     background-color: rgb(142, 137, 137);
     color: white;
 }
 
 
-.correct{
+.correct {
     background-color: green;
     color: white;
 }
 
-.incorrect{
+.incorrect {
     background-color: red;
     color: white;
 }
 
 
 /*DECLARAÇÃO*/
-#main-declaration{
-    margin-top: 50px;
+#main-declaration {
+    margin: 50px;
+    padding: 20px;
     background-color: var(--main-color);
     height: auto;
     border-radius: 20px;
@@ -237,7 +246,7 @@ p{
 
 
 /*FOOTER*/
-#foot{
+#foot {
     margin-top: 40px;
     background-color: var(--footer-color);
     height: 90px;
@@ -249,7 +258,7 @@ p{
     font-size: 20px;
 }
 
-#foot a{
+#foot a {
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -263,14 +272,104 @@ p{
         flex-direction: row;
         gap: 10px;
     }
+
     #top-bar a {
         font-size: 18px;
     }
+
     #top-bar a:hover {
         font-size: 20px;
     }
-    #main-home, #main-about {
+
+    #main-home,
+    #main-about {
         height: auto;
         padding: 20px;
     }
 }
+
+
+
+/*EFEITOS JS*/
+/*CONTADOR*/
+#contador {
+    font-size: 2rem;
+    color: #000000;
+}
+
+
+/*BOTÃO*/
+button {
+    background-color: #000000;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #ff0d0d;
+}
+
+.coracao {
+    position: fixed;
+    font-size: 20px;
+    animation: subir 2s ease-out forwards;
+    pointer-events: none;
+}
+
+.centralizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@keyframes subir {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(1.5);
+    }
+}
+
+/*CARTA*/
+
+.cartinha-container {
+    text-align: center;
+    margin: 40px auto; 
+  }
+
+  .cartinha {
+    display: none;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-family: 'Vcr', sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    animation: abrirCartinha 0.6s ease forwards;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  @keyframes abrirCartinha {
+    0% {
+      opacity: 0;
+      transform: scale(0.7) rotateX(90deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotateX(0deg);
+    }
+  }

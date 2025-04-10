@@ -2,7 +2,7 @@ const questions = [
     {
         question: "Qual é meu doce favorito?",
         answers: [
-            { id: 1, text: "Chiclete de melância", correct: false },
+            { id: 1, text: "Palha Italiana", correct: false },
             { id: 2, text: "Churros", correct: true },
             { id: 3, text: "Danone", correct: false },
             { id: 4, text: "Amandita", correct: false },
@@ -10,32 +10,92 @@ const questions = [
     },
 
     {
-        question: "Qual é a capital da França?",
+        question: "Qual desses times eu torço?",
         answers: [
-            { id: 1, text: "Paris", correct: true },
-            { id: 2, text: "Londres", correct: false },
-            { id: 3, text: "Berlim", correct: false },
-            { id: 4, text: "Madri", correct: false },
+            { id: 1, text: "Real Madrid", correct: false },
+            { id: 2, text: "Dortmund", correct: true },
+            { id: 3, text: "Internazionale", correct: false },
+            { id: 4, text: "Chelsea", correct: false },
         ],
     },
 
     {
-        question: "Qual é a capital da França?",
+        question: "Qual é minha série favorita?",
         answers: [
-            { id: 1, text: "Paris", correct: true },
-            { id: 2, text: "Londres", correct: false },
-            { id: 3, text: "Berlim", correct: false },
-            { id: 4, text: "Madri", correct: false },
+            { id: 1, text: "Peaky Blinders", correct: false },
+            { id: 2, text: "Vikings", correct: false },
+            { id: 3, text: "Dark", correct: false },
+            { id: 4, text: "Breaking Bad", correct: true },
         ],
     },
 
     {
-        question: "Qual é a capital da França?",
+        question: "Qual é meu mangá favorito?",
         answers: [
-            { id: 1, text: "Paris", correct: true },
-            { id: 2, text: "Londres", correct: false },
-            { id: 3, text: "Berlim", correct: false },
-            { id: 4, text: "Madri", correct: false },
+            { id: 1, text: "Vinland Saga", correct: true },
+            { id: 2, text: "One Piece", correct: false },
+            { id: 3, text: "Monster", correct: false },
+            { id: 4, text: "20th Century Boys", correct: false },
+        ],
+    },
+
+    {
+        question: "Qual meu personagem favorito?",
+        answers: [
+            { id: 1, text: "Luffy", correct: false },
+            { id: 2, text: "Kurapika", correct: false },
+            { id: 3, text: "Thorfinn", correct: true },
+            { id: 4, text: "Killua", correct: false },
+        ],
+    },
+
+    {
+        question: "Qual é a parte que mais gosto do seu rosto?",
+        answers: [
+            { id: 1, text: "Olhos", correct: true },
+            { id: 2, text: "Boca", correct: false },
+            { id: 3, text: "Nariz", correct: false },
+            { id: 4, text: "Sorriso", correct: false },
+        ],
+    },
+    
+    {
+        question: "Quem é a mulher mais linda do mundo?",
+        answers: [
+            { id: 1, text: "Estefany Andrade Lima", correct: true },
+            { id: 2, text: "^", correct: false },
+            { id: 3, text: "^", correct: false },
+            { id: 4, text: "^", correct: false },
+        ],
+    },
+
+    {
+        question: "Quem é o maior terror do Corinthians?",
+        answers: [
+            { id: 1, text: "Calleri", correct: false },
+            { id: 2, text: "Luciano", correct: false },
+            { id: 3, text: "Lucas Moura", correct: true },
+            { id: 4, text: "Luis Fabiano", correct: false },
+        ],
+    },
+
+    {
+        question: "Qual o primeiro país que vamos viajar?",
+        answers: [
+            { id: 1, text: "Japão", correct: false },
+            { id: 2, text: "Irlanda", correct: true },
+            { id: 3, text: "China", correct: false },
+            { id: 4, text: "Canadá", correct: false },
+        ],
+    },
+
+    {
+        question: "Quer ficar mais quanto tempo comigo?",
+        answers: [
+            { id: 1, text: "Infinito", correct: true },
+            { id: 2, text: "2 anos", correct: true },
+            { id: 3, text: "1 dia", correct: false },
+            { id: 4, text: "5 segundos", correct: false },
         ],
     },
 ]
@@ -121,3 +181,62 @@ nextButton.addEventListener("click", () => {
 
 
 startQuiz();
+
+
+//////////
+function calcularTempoJuntos(dataInicio) {
+    const hoje = new Date();
+    
+    let anos = hoje.getFullYear() - dataInicio.getFullYear();
+    let meses = hoje.getMonth() - dataInicio.getMonth();
+    let dias = hoje.getDate() - dataInicio.getDate();
+  
+    if (dias < 0) {
+      meses--;
+      const ultimoMes = new Date(hoje.getFullYear(), hoje.getMonth(), 0).getDate();
+      dias += ultimoMes;
+    }
+  
+    if (meses < 0) {
+      anos--;
+      meses += 12;
+    }
+  
+    return { anos, meses, dias };
+  }
+  
+  const dataInicio = new Date("2024-01-20");
+  const tempo = calcularTempoJuntos(dataInicio);
+  
+  // Monta a frase bonitinha
+  let frase = '';
+  if (tempo.anos > 0) frase += `${tempo.anos} ano${tempo.anos > 1 ? 's' : ''}, `;
+  frase += `${tempo.meses} mês${tempo.meses !== 1 ? 'es' : ''} e `;
+  frase += `${tempo.dias} dia${tempo.dias !== 1 ? 's' : ''}`;
+  
+  document.getElementById("contador").textContent = frase;
+  /////////////////
+
+
+
+  function soltarCoracoes() {
+    const coracao = document.createElement('div');
+    coracao.classList.add('coracao');
+    coracao.textContent = '🤍';
+  
+    coracao.style.left = Math.random() * 100 + 'vw';
+    coracao.style.top = Math.random() * 80 + 10 + 'vh';
+  
+    document.body.appendChild(coracao);
+  
+    setTimeout(() => {
+      coracao.remove();
+    }, 2000);
+  }
+  ////////////////////////
+
+
+  function abrirCartinha() {
+    const carta = document.getElementById('cartinha');
+    carta.style.display = 'block';
+  }

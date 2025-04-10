@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color: rgb(213, 221, 50);
+    --footer-color: rgb(0, 0, 0);
+}
+
+@font-face {
+    font-family: 'Valentine';
+    src: url(../fonte/ValentineSoul.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Vcr';
+    src: url(../fonte/VCR_OSD_MONO_1.001.ttf) format('truetype');
+}
+
+main {
+    padding-top: 70px;
+    background-color: black;
+}
+
+h1, h2{
+    margin-top: 10px;
+    font-family: 'Vcr', sans-serif;
+    color: black;
+    font-size: 35px;
+    text-align: center;
+    padding: 20px;
+}
+
+p{
+    font-family: 'Vcr', sans-serif;
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    padding: 20px;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+
+/*NAVBAR*/
+#top-bar{
+    position: fixed;
+    background-color: var(--main-color);
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    border: black solid;
+}
+
+#top-bar img{
+    width: 65px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+#top-bar a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: font-size 0.3s ease-in-out;
+}
+
+#top-bar ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    gap: 150px;
+}
+
+#top-bar a:hover{
+    font-size: 25px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+}
+
+
+
+/*HOME*/
+#main-home{
+    margin-top: 50px;
+    background-color: var(--main-color);
+    height: auto;
+    border-radius: 20px;
+}
+
+
+
+/*SOBRE*/
+#main-about{
+    margin-top: 80px;
+    background-color: var(--main-color);
+    height: auto;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+}
+
+
+
+/*DIVERSOS*/
+#main-random{
+    margin-top: 50px;
+    padding-bottom: 30px;
+    background-color: var(--main-color);
+    height: auto;
+    border-radius: 20px;
+}
+
+#img-container figure{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#main-random img{
+    margin: 20px 20px;
+    width: 25%;
+    height: 330px;
+    border-radius: 20px;
+    transition: ease-in-out 0.5s;
+}
+
+#main-random img:hover{
+    width: 27%;
+    border: black solid
+}
+
+
+/*QUIZ*/
+.app{
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 600px;
+    border: 2px solid black;
+}
+
+.app h1{
+    border-bottom: 1px solid black;
+}
+
+
+.app h2{
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    color: black;
+    font-size: 35px;
+    text-align: start;
+    padding: 20px;
+}
+
+.btn{
+    background-color: white;
+    color: black;
+    font-weight: 500;
+    width: 80%;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px 10%;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+
+.btn:hover:not(.disabled){
+    background-color: black;
+    color: white;
+}
+
+.btn.disabled{
+    cursor: no-drop;
+}
+
+#next-btn{
+    display: block;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    width: 150px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+#next-btn:hover{
+    background-color: rgb(142, 137, 137);
+    color: white;
+}
+
+
+.correct{
+    background-color: green;
+    color: white;
+}
+
+.incorrect{
+    background-color: red;
+    color: white;
+}
+
+
+/*DECLARAÇÃO*/
+#main-declaration{
+    margin-top: 50px;
+    background-color: var(--main-color);
+    height: auto;
+    border-radius: 20px;
+}
+
+
+/*FOOTER*/
+#foot{
+    margin-top: 40px;
+    background-color: var(--footer-color);
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+    font-family: 'Vcr', sans-serif;
+    font-size: 20px;
+}
+
+#foot a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+
+
+/*MEDIA QUERY*/
+@media (max-width: 768px) {
+    #top-bar ul {
+        flex-direction: row;
+        gap: 10px;
+    }
+    #top-bar a {
+        font-size: 18px;
+    }
+    #top-bar a:hover {
+        font-size: 20px;
+    }
+    #main-home, #main-about {
+        height: auto;
+        padding: 20px;
+    }
+}

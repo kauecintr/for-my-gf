@@ -237,11 +237,14 @@ p {
 
 /*DECLARAÇÃO*/
 #main-declaration {
-    margin: 50px;
-    padding: 20px;
+    margin-top: 50px;
     background-color: var(--main-color);
     height: auto;
     border-radius: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
 }
 
 
